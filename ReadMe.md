@@ -45,9 +45,10 @@ Depending on how familiar you are with your chosen language and how smoothly and
 3. \+and - for all integers
 4. \*and / for all integers in no particular order
 5. Input validation
-  - decimals
-  - parentheses
-  - For any parts that you don't get to, stub things out and leave comments with any thoughts you have about implementation of those parts. Document any assumptions that you make and what functionality your program covers.
+  
+  + decimals
+  + parentheses
+  + For any parts that you don't get to, stub things out and leave comments with any thoughts you have about implementation of those parts. Document any assumptions that you make and what functionality your program covers.
 
 Use whatever references and resources you'd normally use for a programming project. This is not a closed book exam or anything like that :)
 
