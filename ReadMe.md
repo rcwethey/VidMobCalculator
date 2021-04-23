@@ -40,11 +40,11 @@ calculate "19 + cinnamon" gives Invalid Input (or similar)
 We generally expect to get the results of this exercise within a week of sending it out, but we do not expect it to take anywhere near a week's worth of work to implement - that timeframe is meant to give you the flexibility to fit this in among whatever other priorities and obligations that you have. If you want longer than that just let us know.
 
 Depending on how familiar you are with your chosen language and how smoothly and quickly things go you may not get a chance to add all the functionality that you want in the time you've allocated. Prioritize
-1. a program that runs
-2.\+ and - for whole numbers
-3.\+ and - for all integers
-4.\* and / for all integers in no particular order
-5. input validation
+1.A program that runs
+2.\+and - for whole numbers
+3.\+and - for all integers
+4.\*and / for all integers in no particular order
+5.Input validation
   - decimals
   - parentheses
   - For any parts that you don't get to, stub things out and leave comments with any thoughts you have about implementation of those parts. Document any assumptions that you make and what functionality your program covers.
