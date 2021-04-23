@@ -41,9 +41,9 @@ We generally expect to get the results of this exercise within a week of sending
 
 Depending on how familiar you are with your chosen language and how smoothly and quickly things go you may not get a chance to add all the functionality that you want in the time you've allocated. Prioritize
 1. a program that runs
-2. + and - for whole numbers
-3. + and - for all integers
-4. * and / for all integers in no particular order
+2.\+ and - for whole numbers
+3.\+ and - for all integers
+4.\* and / for all integers in no particular order
 5. input validation
   - decimals
   - parentheses
