@@ -1,6 +1,7 @@
 //this function takes an element as a string, newPrecedence as a number and returns a number
-const precedenceSwitch = (element: string, newPrecedence: number): number => {
+const precedenceSwitch = (element: string): number => {
   //sets newPrecedence equal to the precedence of the element given to the function and returning the newPredence through a switch
+  let newPrecedence = 0
   switch (element) {
     case '+':
     case '-':
@@ -14,6 +15,7 @@ const precedenceSwitch = (element: string, newPrecedence: number): number => {
       alert('how did you even get here??');
       break;
   }
+  console.log(element, newPrecedence);
   return newPrecedence;
 }
 
