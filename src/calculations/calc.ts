@@ -10,7 +10,7 @@ import mathematicalExpression from './mathematicalExpression';
 import createEntireNumber from './createEntireNumber'
 
 
-const calc = (expression: string[]): number => {
+const calculate = (expression: string[]): number => {
   //array containing all operators involved in this stacking function
   const operators = ['+', '-', '*', '/'], numberOrPeriod = /[0-9\.]+/
   let operationsArray: string[] = [], numbersArray: string[] = [], precedence: number = 0, newPrecedence: number
@@ -91,4 +91,4 @@ const calc = (expression: string[]): number => {
   return Number(numbersArray[0]);
 }
 
-export default calc;
+export default calculate;
