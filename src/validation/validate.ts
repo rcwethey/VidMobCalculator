@@ -1,3 +1,9 @@
+/**
+ * Created By: Ryan C. Wethey 
+ * Date of Last Edit: 4/26/21
+ * Reason For Edit: Refactoring + Optimization
+ */
+
 const validateInput = (splitExpression: string[]): string[] => {
   /**letter is to test if array containers any letter in the english alphabet, 
    * as well as any general syntax errors due to duplicate operators with some exceptions,
@@ -5,27 +11,21 @@ const validateInput = (splitExpression: string[]): string[] => {
    * some operators pushed onto the array during actual test
   */
   const letter = /[a-z]+/g,
-    generalAlgorithmicSyntaxError = ['++', '+*', '+/', '+)', '-+', '-*', '-/', '-(', '*+', '**', '*/', '*)', '/+', '/*', '//', '/)', '(+', '(*', '(/', '()'],
-    AlgorithmicSyntaxError = ['*', '/', '+']
+    generalAlgorithmicSyntaxError = ['++', '+*', '+/', '-+', '-*', '-/', '*+', '**', '*/', '/+', '/*', '//', '/)', '*)', '+)', '(+', '(*', '(/', '()'],
+    algorithmicOperators = ['*', '/', '+']
 
   //to keep track of pairs of parentheses
   let openedParentheses = 0, closedParentheses = 0
 
 
   //tests to make sure the expression is not empty
-  if (!splitExpression.length) return splitExpression = ['Invalid Input']
+  if (!splitExpression.length || (splitExpression.length === 1 && [...algorithmicOperators, '(', ')', '-'].includes(splitExpression[0]))) return splitExpression = ['Invalid Input']
 
   //tests to make sure the 1st element is not any operator besides a negative or an open parentheses
-  if ([...AlgorithmicSyntaxError, ')'].indexOf(`${splitExpression[0]}`) >= 0) return splitExpression = ['Syntax Error']
+  if ([...algorithmicOperators, ')'].indexOf(`${splitExpression[0]}`) >= 0) return splitExpression = ['Syntax Error']
 
   //tests to make sure the last element is not any operator besides a closed parentheses
-  if ([...AlgorithmicSyntaxError, '(', '-'].indexOf(`${splitExpression[splitExpression.length - 1]}`) >= 0) return splitExpression = ['Syntax Error']
-
-
-  //!! Check is array is length of 1 and only operator return syntax error if so
-
-  //!! What do you do whane the array is not length of 1 but is only numbers or no actual operator to do calculations on?
-
+  if ([...algorithmicOperators, '(', '-'].indexOf(`${splitExpression[splitExpression.length - 1]}`) >= 0) return splitExpression = ['Syntax Error']
 
 
   /**loops the array to make sure of 3 things 
@@ -37,11 +37,11 @@ const validateInput = (splitExpression: string[]): string[] => {
   for (let index = 0; index < splitExpression.length; index++) {
     let element = splitExpression[index], peakingElement = splitExpression[index + 1]
     //tests array against any letters and throws an error before any furthur operations can occur
-    if (letter.test(splitExpression[index])) return splitExpression = ['Invalid Input'];
+    if (letter.test(element)) return splitExpression = ['Invalid Input'];
 
     //keep track of parentheses pairs
-    if (element == "(") openedParentheses++
-    if (element == ")") closedParentheses++
+    if (element === "(") openedParentheses++
+    if (element === ")") closedParentheses++
 
     //tests against all syntax error possabilities and throws an error before any further operations can occuer
     if (generalAlgorithmicSyntaxError.indexOf(`${element}${peakingElement}`) >= 0) return splitExpression = ['Syntax Error']

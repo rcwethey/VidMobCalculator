@@ -1,3 +1,9 @@
+/**
+ * Created By: Ryan C. Wethey 
+ * Date of Last Edit: 4/26/21
+ * Reason For Edit: Refactoring + Optimization
+ */
+
 //this function takes an element as a string, newPrecedence as a number and returns a number
 const precedenceSwitch = (element: string): number => {
   //sets newPrecedence equal to the precedence of the element given to the function and returning the newPredence through a switch
@@ -12,10 +18,9 @@ const precedenceSwitch = (element: string): number => {
       newPrecedence = 3;
       break;
     default:
-      alert('how did you even get here??');
+      alert('How did you even get here??');
       break;
   }
-  console.log(element, newPrecedence);
   return newPrecedence;
 }
 
