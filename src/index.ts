@@ -1,6 +1,12 @@
+/**
+ * Created By: Ryan C. Wethey 
+ * Date of Last Edit: 4/26/21
+ * Reason For Edit: Commenting
+ */
+
 //Import functions
 import validateInput from './validation/validate';
-import calc from './calculations/calc';
+import calculate from './calculations/calculate';
 
 const Index = (expression: string): number | Error => {
   let answer: number;
@@ -18,7 +24,7 @@ const Index = (expression: string): number | Error => {
   };
 
   //does the actual calculation
-  answer = calc(validatedArray);
+  answer = calculate(validatedArray);
   console.log(answer);
 
   return answer;
