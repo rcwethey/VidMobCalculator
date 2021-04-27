@@ -8,26 +8,20 @@
 import validateInput from './validation/validate';
 import calculate from './calculations/calculate';
 
-const Index = (expression: string): number | Error => {
-  let answer: number;
+
+const Index = (expression: string): number | string => {
+  let answer: number | string;
 
   //Split the expression into an array and remove the white space 
   const expressionSplitArray = expression.split('').filter(nonWhiteSpaceElement => { return nonWhiteSpaceElement != ' ' });
-
+  console.log(expressionSplitArray)
   //Validatied array 
   const validatedArray: string[] = validateInput(expressionSplitArray);
+  //console.log(validatedArray);
 
-  //if the array returned is one element an error occured, return the first element beign the error
-  if (validatedArray.length === 1) {
-    console.log(validatedArray[0])
-    return new Error(validatedArray[0]);
-  };
-
-  //does the actual calculation
-  answer = calculate(validatedArray);
-  console.log(answer);
-
-  return answer;
+  //if the array returned is one element an error occured, return the answer is the error message else calculate!
+  answer = (validatedArray[0] !== "Syntax Error" || "Invalid Input") ? calculate(validatedArray) : validatedArray[0]
+  return answer
 }
 
 export default Index;

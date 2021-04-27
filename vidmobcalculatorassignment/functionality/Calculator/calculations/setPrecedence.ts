@@ -17,9 +17,6 @@ const precedenceSwitch = (element: string): number => {
     case '/':
       newPrecedence = 3;
       break;
-    default:
-      alert('How did you even get here??');
-      break;
   }
   return newPrecedence;
 }

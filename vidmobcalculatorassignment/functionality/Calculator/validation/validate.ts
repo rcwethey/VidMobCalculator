@@ -1,7 +1,7 @@
 /**
  * Created By: Ryan C. Wethey 
- * Date of Last Edit: 4/26/21
- * Reason For Edit: Refactoring + Optimization
+ * Date of Last Edit: 4/27/21
+ * Reason For Edit: Testing 
  */
 
 const validateInput = (splitExpression: string[]): string[] => {
@@ -10,13 +10,13 @@ const validateInput = (splitExpression: string[]): string[] => {
    * and array of all operators to test against beggining element and ending element with 
    * some operators pushed onto the array during actual test
   */
-  const letter = /[a-z]+/g,
+  const letter = /[a-zA-Z]+/g,
     generalAlgorithmicSyntaxError = ['++', '+*', '+/', '-+', '-*', '-/', '*+', '**', '*/', '/+', '/*', '//', '/)', '*)', '+)', '(+', '(*', '(/', '()'],
+    genralSymbols = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '=', '{', '}', '>', '?', '|', '[', ']', ':', ';', '<', ','],
     algorithmicOperators = ['*', '/', '+']
 
   //to keep track of pairs of parentheses
   let openedParentheses = 0, closedParentheses = 0
-
 
   //tests to make sure the expression is not empty
   if (!splitExpression.length || (splitExpression.length === 1 && [...algorithmicOperators, '(', ')', '-'].includes(splitExpression[0]))) return splitExpression = ['Invalid Input']
@@ -37,7 +37,8 @@ const validateInput = (splitExpression: string[]): string[] => {
   for (let index = 0; index < splitExpression.length; index++) {
     let element = splitExpression[index], peakingElement = splitExpression[index + 1]
     //tests array against any letters and throws an error before any furthur operations can occur
-    if (letter.test(element)) return splitExpression = ['Invalid Input'];
+    if (letter.test(element)) return splitExpression = ['Invalid Input']
+    if (genralSymbols.includes(element)) return splitExpression = ['Invalid Input']
 
     //keep track of parentheses pairs
     if (element === "(") openedParentheses++
