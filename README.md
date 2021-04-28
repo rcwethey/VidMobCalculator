@@ -3,7 +3,7 @@
 
 ### Welcome Vidmob employee!
 ##### (because you're definitely one of the only people looking at this repo)
-***
+
 This program allows you (the user) to put a mathematical expression in as text and return the answer
 It support positive, negative, and decimal numbers, +, -, *, and / operations, **Implicit Multiplication**, generic and **nested parentheses**, and input validation.
 
