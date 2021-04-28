@@ -20,7 +20,7 @@ const Index = (expression: string): number | string => {
   //console.log(validatedArray);
 
   //if the array returned is one element an error occured, return the answer is the error message else calculate!
-  answer = (validatedArray[0] !== "Syntax Error" || "Invalid Input") ? calculate(validatedArray) : validatedArray[0]
+  answer = (validatedArray[0] === "Syntax Error" || "Invalid Input") ? validatedArray[0] : calculate(validatedArray)
   return answer
 }
 

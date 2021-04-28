@@ -23,7 +23,6 @@ export default function Home() {
     event.preventDefault();
     setSubmitted(true)
     setAnswer(Calculator(textInput.current.value));
-    console.log(answer);
   }
 
   return (
@@ -36,7 +35,6 @@ export default function Home() {
         <Image src="/vidmob.svg" height={50} width={200} />
         <p className={styles.funnyCaption}>... calculator?</p>
       </div>
-
 
       <main className={styles.main}>
         <form onSubmit={submitForm}>
