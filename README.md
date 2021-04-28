@@ -36,6 +36,6 @@ These tests are written in Jest and can be expanded in the future along with thi
 
 **Thank you for looking at this repo and or the live site feautring this "feature"!**
 
-**I hope yo hear back from you soon!**
+**I hope to hear back from you soon!**
 
 
