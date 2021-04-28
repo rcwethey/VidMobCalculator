@@ -16,11 +16,9 @@ Firslty, you would either want to pull this repo and run it on your local machin
 Too run locally, you must pull the repo and then run `npm install` to download all the dependencies.
 Once they have installed, you can simply run:
 
-    `
     npm run dev 
     or
     yarn dev
-    `
 
 Then, Open [http://localhost:3000](http://localhost:3000) with your browser to see the result!
 
@@ -30,10 +28,14 @@ There are testing files created for the functionality testing for this feature.
 
 To run these tests you can run the command: 
 
-  `
-  npm run test
-  # or
-  yarn test
-  `
+    npm run test
+    or
+    yarn test
 
 These tests are written in Jest and can be expanded in the future along with this program
+
+**Thank you for looking at this repo and or the live site feautring this "feature"!**
+
+**I hope yo hear back from you soon!**
+
+
