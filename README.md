@@ -11,7 +11,7 @@ A future feature of this program could consist of **exponents** noted by the car
 
 ## Getting Started
 
-Firslty, you would either want to pull this repo and run it on your local machine or you could visit [https://vid-mob-calculator.vercel.app](https://vid-mob-calculator.vercel.app)! A live deployed version!
+Firstly, you would either want to pull this repo and run it on your local machine or you could visit [https://vid-mob-calculator.vercel.app](https://vid-mob-calculator.vercel.app)! A live deployed version!
 
 Too run locally, you must pull the repo and then run `npm install` to download all the dependencies.
 Once they have installed, you can simply run:
