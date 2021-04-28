@@ -20,7 +20,6 @@ const calculate = (expression: string[]): number => {
   const doRegualarMathematicalExpression = (opsArray: string[], numsArray: string[]) => { return mathematicalExpression(opsArray.splice(-1), numsArray.splice(-2)) }
   const doImplicitMultiplicationExpression = (numsArray: string[]) => { return mathematicalExpression(['*'], numsArray.splice(-2)) }
 
-  //!!console.log(expression);
   for (let index = 0; index <= expression.length - 1; index++) {
     let element = expression[index], beforeElement = expression[index - 1] //, lastOperator: string | undefined = operationsArray[operationsArray.length - 1]
 
