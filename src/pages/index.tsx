@@ -38,7 +38,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <form onSubmit={submitForm}>
-          <input type="text" placeholder="Type Expression" className={styles.input} ref={textInput} required onFocus={() => { setSubmitted(false); console.log('change') }} />
+          <input type="text" placeholder="Type Expression" className={styles.input} ref={textInput} required onFocus={() => setSubmitted(false)} />
           <button type="submit" className={styles.submit}>Submit</button>
         </form>
         {submitted && <p className={styles.answer}>Answer: {answer}</p>}
