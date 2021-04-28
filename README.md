@@ -16,11 +16,12 @@ Firslty, you would either want to pull this repo and run it on your local machin
 Too run locally, you must pull the repo and then run `npm install` to download all the dependencies.
 Once they have installed, you can simply run:
 
-  `
-  npm run dev
-  # or
-  yarn dev
-  `
+    `
+    npm run dev 
+    or
+    yarn dev
+    `
+
 Then, Open [http://localhost:3000](http://localhost:3000) with your browser to see the result!
 
 ## Testing 
