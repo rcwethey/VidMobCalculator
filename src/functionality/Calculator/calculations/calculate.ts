@@ -11,6 +11,7 @@ import createEntireNumber from './createEntireNumber'
 
 
 const calculate = (expression: string[]): number => {
+
   //array containing all operators involved in this stacking function
   const operators = ['+', '-', '*', '/'], numberOrPeriod = /[0-9\.]+/
   let operationsArray: string[] = [], numbersArray: string[] = [], precedence: number = 0, newPrecedence: number
@@ -21,7 +22,7 @@ const calculate = (expression: string[]): number => {
   const doImplicitMultiplicationExpression = (numsArray: string[]) => { return mathematicalExpression(['*'], numsArray.splice(-2)) }
 
   for (let index = 0; index <= expression.length - 1; index++) {
-    let element = expression[index], beforeElement = expression[index - 1] //, lastOperator: string | undefined = operationsArray[operationsArray.length - 1]
+    let element = expression[index], beforeElement = expression[index - 1]
 
     /** if the element is a number or a period pass the number into the wholeNumber function 
      * or the previous element is a negative and the operaotr befoe that was any operator or open parentheses, 
@@ -32,12 +33,12 @@ const calculate = (expression: string[]): number => {
     if (numberOrPeriod.test(element) || ((element === '-' && ([...operators, '('].includes(beforeElement) || index === 0)))) {
       let items = createEntireNumber(expression, index, numberOrPeriod);
       index = items.index;
-      //console.log(index);
       numbersArray.push(items.returnedNumberString)
     }
 
     //if element is an operator
     else if (operators.includes(element)) {
+
       //if the operators array is not empty then pass the element and newPrecedence value into the precedence switch
       if (operationsArray.length) {
         newPrecedence = precedenceSwitch(element)
@@ -82,15 +83,15 @@ const calculate = (expression: string[]): number => {
       //take off the open parentheses
       operationsArray.splice(-1)
 
-      //if the array is not emplty pass the last operator to reset precedence
+      //if the array is not empty pass the last operator to reset precedence
       if (operationsArray.length) precedence = precedenceSwitch(operationsArray[operationsArray.length - 1])
 
-      //if the numbers array is 2 elements longer than the operators array perform implicate multiplication
+      //if the numbers array is 2 elements longer than the operators array perform implicate multiplication and push new element onto the numbers arrary
       if (numbersArray.length === operationsArray.length + 2) pushElement(numbersArray, doImplicitMultiplicationExpression(numbersArray))
     }
   }
 
-  //loop through performing calculations until the operators array is emopty
+  //loop through performing calculations until the operators array is empty 
   while (operationsArray.length) pushElement(numbersArray, doRegualarMathematicalExpression(operationsArray, numbersArray))
 
   //if the numbers array still has more than one value perform implicit multiplication

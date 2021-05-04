@@ -16,7 +16,7 @@ const createEntireNumber = (expression: string[], index: number, numberOrPeriod:
   } while (numberOrPeriod.test(expression[index]) && index < exrpessionLength)
 
   //decrement the index in favor of the parent for loop incrementing to next index anyways
-  index = index - 1
+  index -= 1
 
   //join the enitrNumber array into a string called returnedNumberString
   let returnedNumberString = entireNumber.join('')

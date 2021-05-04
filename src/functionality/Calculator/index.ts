@@ -18,7 +18,6 @@ const Index = (expression: string): number | string => {
   //Validatied array 
   const validatedArray: string[] = validateInput(expressionSplitArray);
 
-
   //if the array returned is one element an error occured, return the answer is the error message else calculate!
   if (validatedArray.length === 1 && (validatedArray[0] === "Syntax Error" || "Invalid Input")) { answer = validatedArray[0] }
   else { answer = calculate(validatedArray) }

@@ -17,7 +17,9 @@ const mathematicalExpression = (operator: string[], numbers: string[]): string =
     case '*': stringedNumber = (nums[0] * nums[1]); break;
     case '/': stringedNumber = (nums[0] / nums[1]); break;
   }
+
   return stringedNumber.toString();
+
 }
 
 export default mathematicalExpression;
